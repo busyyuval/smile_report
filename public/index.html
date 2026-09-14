@@ -1,18 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="he" dir="rtl">
-    
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>דו״ח 2</title>
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=Rubik:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="report-card" aria-labelledby="page-title">
+        <header class="hero">
+          <div class="crest" aria-hidden="true">
+            <svg viewBox="0 0 100 100">
+              <path d="M50 9 82 22v25c0 21-13 35-32 44C31 82 18 68 18 47V22L50 9Z" fill="none" stroke="currentColor" stroke-width="5" />
+              <path d="M50 24v46M34 42h32M39 31l22 22M61 31 39 53" />
+              <circle cx="50" cy="50" r="7" fill="currentColor" stroke="none" />
+            </svg>
+          </div>
+          <p class="eyebrow">דיווח יומי</p>
+          <h1 id="page-title">דו״ח 2</h1>
+          <p class="subtitle">איך היה היום?</p>
+        </header>
 
-<body>
-    <h1>שלום</h1>
-    <p>האם את מחייכת?</p>
-    <button>Click me</button>
-    <script src="script.js"></script>
+        <form id="report-form" novalidate>
+          <fieldset>
+            <legend>בחרי אפשרות אחת</legend>
+            <div class="status-options">
+              <button class="status-option" type="button" data-status="מחייכת" aria-pressed="false">
+                <span class="status-icon happy">☺</span>
+                <span class="status-copy"><strong>מחייכת</strong><small>הכול בסדר היום</small></span>
+                <span class="selection-mark" aria-hidden="true">✓</span>
+              </button>
+              <button class="status-option" type="button" data-status="לא מחייכת" aria-pressed="false">
+                <span class="status-icon sad">☹</span>
+                <span class="status-copy"><strong>לא מחייכת</strong><small>כדאי לשים לב אליי</small></span>
+                <span class="selection-mark" aria-hidden="true">✓</span>
+              </button>
+            </div>
+          </fieldset>
 
-</body>
+          <label class="note-label" for="note">הערה <span>אופציונלי</span></label>
+          <textarea id="note" name="note" rows="4" maxlength="1000" placeholder="אפשר לכתוב כאן משהו שחשוב לך לשתף..."></textarea>
+          <p id="form-message" class="form-message" role="alert" hidden></p>
+          <button id="submit-button" class="submit-button" type="submit"><span>שלחי דיווח</span><span aria-hidden="true">←</span></button>
+        </form>
 
+        <section id="success-message" class="success-message" hidden>
+          <div class="success-icon" aria-hidden="true">✓</div>
+          <h2>הדיווח נשלח</h2>
+          <p>תודה, הדיווח שלך התקבל בהצלחה.</p>
+          <button id="send-another" type="button">שלחי דיווח נוסף</button>
+        </section>
+      </section>
+    </main>
+    <script src="/script.js"></script>
+  </body>
 </html>
