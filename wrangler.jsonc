@@ -1,0 +1,8 @@
+{
+    "name": "smile-report",
+    "main": "./src/index.js",
+    "compatibility_date": "2026-09-14",
+    "assets": {
+        "directory": "./public"
+    }
+}
